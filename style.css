@@ -4,15 +4,13 @@
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
 
-
 body{
-    font-family:Arial, sans-serif;
-    background:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
 }
 
 
@@ -26,57 +24,44 @@ body{
 }
 
 
+
 /* NAVBAR */
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 60px;
-    border-bottom:1px solid #ddd;
-    background:white;
-
-    position:sticky;
-    top:0;
-    z-index:1000;
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 20px 80px !important; 
+    border-bottom: 1px solid #ddd !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
 }
 
-
-/* LOGO */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;  /* This adds the perfect safe spacing on the sides */
+    border-bottom: 1px solid #ddd;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
 
 .logo{
-    font-size:42px;
-    letter-spacing:6px;
+    font-size:40px;
 }
-
-
-/* MENU */
-
-.menu{
-    display:flex;
-    gap:25px;
-}
-
 
 .menu a{
     text-decoration:none;
     color:black;
-    font-size:17px;
-    transition:0.3s;
+    margin-left:20px;
+    font-size:16px;
 }
-
 
 .menu a:hover{
     color:#c79a2b;
-}
-
-
-/* ICONS */
-
-.icons{
-    display:flex;
-    gap:20px;
-    font-size:24px;
 }
 
 
@@ -88,57 +73,109 @@ body{
 }
 
 
-/* TITLE */
+/* TITLE & SECTION HEADINGS */
 
-.title{
-    text-align:center;
-    margin-top:40px;
+.title,
+.recipient-title {
+    text-align: center !important;
+    width: 100%;
+    margin-top: 40px;
 }
 
-
-.title h1{
+.title h1,
+.recipient-title h1 {
     font-size:40px;
 }
 
 
-/* PRODUCTS */
+/* FILTER & SORTS */
+
+.filter-section,
+.sort-section{
+    text-align:center;
+    margin-top:20px;
+}
+
+.filter-section button,
+#loadMoreBtn{
+    padding:12px 20px;
+    margin:10px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.filter-section button:hover,
+#loadMoreBtn:hover{
+    background:#c79a2b;
+}
+
+.sort-section select{
+    padding:12px;
+    width:220px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+/* LOAD MORE LAYOUT CENTERED */
+
+.load-more-box {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+/* PRODUCTS GRID */
 
 .products{
     display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
     gap:20px;
     padding:40px;
 }
 
 
-/* CARD */
+/* CARD & HOVER TRANSACTIONS */
 
 .card{
-    width:25%;
+    width:250px;
     border:1px solid #ddd;
+    border-radius:10px;
     padding:15px;
     text-align:center;
-    border-radius:10px;
-    transition:0.4s;
-    background:white;
+    /* Added transition timing and box-shadow tracking for super clean interactive fluidity */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
 }
-
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    /* Translates the card up slightly and drops a professional depth shadow behind it */
+    transform: translateY(-8px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
 }
-
 
 .card img{
     width:100%;
+    height:250px;
+    object-fit:cover;
     border-radius:10px;
+    cursor:pointer;
+    transition: transform 0.3s ease;
 }
 
+.card img:hover{
+    transform:scale(1.03);
+}
 
 .card h3{
     margin-top:15px;
+    font-size:20px;
 }
-
 
 .card p{
     margin-top:10px;
@@ -146,26 +183,53 @@ body{
 }
 
 
-/* BUTTON */
+/* QUANTITY */
 
-.card button,
-.login-box button,
-.contact-box button{
+.quantity-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     margin-top:15px;
-    width:100%;
-    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.quantity-box button{
+    width:60px;
+    height:50px;
     border:none;
-    background:black;
-    color:white;
+    background:#f5f5f5;
+    font-size:28px;
     cursor:pointer;
-    border-radius:5px;
-    transition:0.3s;
+}
+
+.qty{
+    font-size:22px;
+    font-weight:bold;
 }
 
 
-.card button:hover,
+/* BUTTONS */
+
+.add-cart,
+.login-box button,
+.contact-box button,
+.checkout-btn{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.add-cart:hover,
 .login-box button:hover,
-.contact-box button:hover{
+.contact-box button:hover,
+.checkout-btn:hover{
     background:#c79a2b;
 }
 
@@ -178,66 +242,60 @@ body{
     padding:40px;
 }
 
-
 .gift-card{
     width:50%;
     text-align:center;
-    transition:0.4s;
 }
-
-
-.gift-card:hover{
-    transform:scale(1.03);
-}
-
 
 .gift-card img{
     width:100%;
     border-radius:10px;
 }
 
-
 .gift-card h2{
     margin-top:15px;
-    font-size:30px;
 }
 
-
-/* RECIPIENT TITLE */
-
-.recipient-title{
-    text-align:center;
-    margin-top:40px;
-}
-
-
-.recipient-title h1{
-    font-size:35px;
-}
 
 
 /* LOGIN */
 
-.login-box,
-.contact-box,
-.cart-box{
-    width:40%;
-    margin:auto;
-    margin-top:50px;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+.login-container {
+    min-height: 80vh;          
+    width: 100%;               
+    display: flex;             
+    justify-content: center;   
+    align-items: center;     
+    padding: 20px;
 }
 
+.login-box {
+    width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    background: white;       
+}
+.login-box h1 {
+    margin-bottom: 20px;
+}
 
-/* INPUT */
+.login-box input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.switch-text{
+    margin-top:20px;
+}
 
-input,
-textarea{
-    padding:15px;
-    font-size:16px;
-    border:1px solid #ccc;
-    border-radius:5px;
+.switch-text span{
+    color:#c79a2b;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 
@@ -252,33 +310,100 @@ textarea{
     line-height:35px;
 }
 
-.about-text{
-    width:60%;
-    margin:auto;
-    margin-top:40px;
-    text-align:center;
-    font-size:22px;
-    line-height:35px;
-}
 
-.login-box,
-.contact-box,
-.cart-box{
-    width:40%;
-    margin:auto;
-    margin-top:50px;
+/* CART */
+
+#cart-products{
     display:flex;
-    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:center;
     gap:20px;
+    padding:40px;
 }
 
-input,
-textarea{
-    padding:15px;
-    font-size:16px;
-    border:1px solid #ccc;
-    border-radius:5px;
+.cart-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:15px;
 }
+
+.cart-buttons button{
+    width:45px;
+    height:45px;
+    border:none;
+    background:black;
+    color:white;
+    font-size:22px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.cart-buttons button:hover{
+    background:#c79a2b;
+}
+
+.clear-cart{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+#clear-cart{
+    padding:14px 30px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+
+/* FAQ */
+
+.faq-section{
+    padding:40px;
+}
+
+.accordion-button:not(.collapsed){
+    background:#c79a2b;
+    color:white;
+}
+
+
+/* POPUP */
+
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.popup img{
+    width:400px;
+    max-width:90%;
+    max-height:90vh;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+}
+
+.close-popup{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
 
 /* FOOTER */
 
@@ -290,34 +415,19 @@ textarea{
     margin-top:40px;
 }
 
-.card,
-.gift-card,
-.navbar,
-.footer{
-    animation:fade 1s;
+/* PAYMENT MODAL SUBMIT BUTTON */
+#confirmPayBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-@keyframes fade{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-#cart-products{
-    display:flex;
-    gap:20px;
-    padding:40px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-#cart-products .card{
-    width:250px;
+#confirmPayBtn:hover {
+    background: #c79a2b;
 }

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 <head>
-
-    <title>Palmonas</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALMONAS</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-
-    <!-- TOP BAR -->
+    <!-- TOPBAR -->
 
     <div class="topbar">
 
@@ -22,28 +22,22 @@
     </div>
 
 
-
     <!-- NAVBAR -->
 
-    <div class="navbar">
-
-        <div class="logo">
-            PALMONAS
-        </div>
-
-
+        <div class="main-navbar">
+    <div class="logo">
+        PALMONAS
+    </div>
     <div class="menu">
-
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="login.html">Login</a>
-    <a href="cart.html">Cart</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart</a>
+    </div>
+</div>
 
     </div>
-    </div>
-
-
 
     <!-- BANNER -->
 
@@ -54,7 +48,6 @@
     </div>
 
 
-
     <!-- TITLE -->
 
     <div class="title">
@@ -63,65 +56,175 @@
 
     </div>
 
+<div class="filter-section">
 
+    <button onclick="filterProducts('all')">
+        All
+    </button>
+
+    <button onclick="filterProducts('ring')">
+        Rings
+    </button>
+
+    <button onclick="filterProducts('necklace')">
+        Necklaces
+    </button>
+
+    <button onclick="filterProducts('earring')">
+        Earrings
+    </button>
+
+</div>
+
+
+
+<div class="sort-section">
+
+    <select onchange="sortProducts(this.value)">
+
+        <option value="">
+            Sort Products
+        </option>
+
+        <option value="low">
+            Price Low To High
+        </option>
+
+        <option value="high">
+            Price High To Low
+        </option>
+
+    </select>
+
+</div>
 
     <!-- PRODUCTS -->
 
     <div class="products">
 
+        <!-- CARD 1 -->
 
+        <div class="card" data-category="necklace">
 
-        <div class="card">
-
-            <img src="BlossomM.png" alt="">
+            <img src="BlossomM.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Blossom Mangalsutra</h3>
 
             <p>₹2,499</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <!-- CARD 2 -->
 
-            <img src="ER.png" alt="">
+        <div class="card" data-category="earring">
+
+            <img src="ER.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Diamond Earrings</h3>
 
             <p>₹1,999</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <!-- CARD 3 -->
 
-            <img src="Ring.png" alt="">
+        <div class="card" data-category="ring">
+
+            <img src="Ring.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Gold Ring</h3>
 
             <p>₹3,299</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <!-- CARD 4 -->
 
-            <img src="longER.png" alt="">
+     <div class="card" data-category="earring">
+
+            <img src="longER.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Luxury Earrings</h3>
 
             <p>₹2,899</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
@@ -129,63 +232,133 @@
 
 
 
-    <!-- SECOND PRODUCT ROW -->
+    <!-- SECOND PRODUCTS -->
 
     <div class="products">
 
+        <!-- CARD 5 -->
 
+       <div class="card" data-category="necklace">
 
-        <div class="card">
-
-            <img src="Neckless.png" alt="">
+            <img src="Neckless.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Gold Necklace</h3>
 
             <p>₹4,199</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <!-- CARD 6 -->
 
-            <img src="Bracelet.png" alt="">
+        <div class="card" data-category="bracelet">
+
+            <img src="Bracelet.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Diamond Bracelet</h3>
 
             <p>₹2,599</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <!-- CARD 7 -->
+         
+        <div class="card" data-category="earring">
 
-            <img src="RippleER.png" alt="">
+            <img src="RippleER.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Silver Earrings</h3>
 
             <p>₹1,899</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <!-- CARD 8 -->
 
-            <img src="TeddyN.png" alt="">
+        <div class="card" data-category="necklace">
+
+            <img src="TeddyN.png" alt="" onclick="openProduct(this.src)">
 
             <h3>Teddy Necklace</h3>
 
             <p>₹3,499</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
@@ -193,111 +366,219 @@
 
 
 
-    <!-- SHOP BY RECIPIENT -->
+    <!-- LOAD MORE BUTTON -->
 
-    <div class="title">
+    <div class="load-more-box">
 
-        <h1>Shop By Recipient</h1>
-
-    </div>
-
-
-
-    <div class="gift-box">
-
-        <div class="gift-card">
-
-            <a href="#women-products">
-
-                <img src="her.png" alt="">
-
-            </a>
-
-            <h2>Gifts For Her</h2>
-
-        </div>
-
-
-
-        <div class="gift-card">
-
-            <a href="#men-products">
-
-                <img src="him.png" alt="">
-
-            </a>
-
-            <h2>Gifts For Him</h2>
-
-        </div>
+        <button id="loadMoreBtn">
+            Load More
+        </button>
 
     </div>
 
 
 
-    <!-- WOMEN COLLECTION -->
+    <!-- EXTRA PRODUCTS -->
 
-    <div class="recipient-title" id="women-products">
+    <div class="products" id="moreProducts" style="display:none;">
 
-        <h1>Women Collection</h1>
+        <div class="card" data-category="ring">
 
-    </div>
+            <img src="3HoneyCombR.png" alt="" onclick="openProduct(this.src)">
 
-
-
-    <div class="products">
-
-        <div class="card">
-
-            <img src="PlayFulGiftBox.png" alt="">
-
-            <h3>Diamond Set</h3>
-
-            <p>₹4,999</p>
-
-            <button>Add To Cart</button>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <img src="TwinSparkGiftBox.png" alt="">
-
-            <h3>Luxury Necklace</h3>
-
-            <p>₹5,499</p>
-
-            <button>Add To Cart</button>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <img src="VintageN.jpg" alt="">
-
-            <h3>Vintage Necklace</h3>
+            <h3>Honey Comb Ring</h3>
 
             <p>₹2,999</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
 
 
-        <div class="card">
+        <div class="card" data-category="necklace">
 
-            <img src="SilverlineGiftBox.png" alt="">
+            <img src="GoldenLayersWithStoneN.png" alt="" onclick="openProduct(this.src)">
 
-            <h3>Silverline Gift Box</h3>
+            <h3>Golden Layer Necklace</h3>
 
-            <p>₹1,799</p>
+            <p>₹3,499</p>
 
-            <button>Add To Cart</button>
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card" data-category="bracelet">
+
+            <img src="SeaPearlBracelet.png" alt="" onclick="openProduct(this.src)">
+
+            <h3>Sea Pearl Bracelet</h3>
+
+            <p>₹2,799</p>
+
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card" data-category="necklace">
+
+            <img src="TrioSparkNecklace.webp" alt="" onclick="openProduct(this.src)">
+
+            <h3>Trio Spark Necklace</h3>
+
+            <p>₹4,199</p>
+
+            <div class="cart-actions">
+
+                <div class="quantity-box">
+
+                    <button class="minus">-</button>
+
+                    <span class="qty">1</span>
+
+                    <button class="plus">+</button>
+
+                </div>
+
+                <button class="add-cart">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- SHOP BY RECIPIENT -->
+
+<div class="title">
+
+    <h1>Shop By Recipient</h1>
+
+</div>
+
+
+
+<div class="gift-box">
+
+    <div class="gift-card">
+
+        <a href="#women-products">
+
+            <img src="her.png" alt="">
+
+        </a>
+
+        <h2>Gifts For Her</h2>
+
+    </div>
+
+
+
+    <div class="gift-card">
+
+        <a href="#men-products">
+
+            <img src="him.png" alt="">
+
+        </a>
+
+        <h2>Gifts For Him</h2>
+
+    </div>
+
+</div>
+
+
+
+<!-- WOMEN COLLECTION -->
+
+<div class="recipient-title" id="women-products">
+
+    <h1>Women Collection</h1>
+
+</div>
+
+
+
+<div class="products">
+
+    <div class="card" data-category="gift">
+
+        <img src="PlayFulGiftBox.png" alt="" onclick="openProduct(this.src)">
+
+        <h3>Diamond Set</h3>
+
+        <p>₹4,999</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
 
         </div>
 
@@ -305,74 +586,349 @@
 
 
 
-    <!-- MEN COLLECTION -->
+    <div class="card" data-category="necklace">
 
-    <div class="recipient-title" id="men-products">
+        <img src="TwinSparkGiftBox.png" alt="" onclick="openProduct(this.src)">
 
-        <h1>Men Collection</h1>
+        <h3>Luxury Necklace</h3>
 
-    </div>
+        <p>₹5,499</p>
 
+        <div class="cart-actions">
 
+            <div class="quantity-box">
 
-    <div class="products">
+                <button class="minus">-</button>
 
-        <div class="card">
+                <span class="qty">1</span>
 
-            <img src="MosaicGB.png" alt="">
+                <button class="plus">+</button>
 
-            <h3>The Mosaic Men's Gift Box</h3>
+            </div>
 
-            <p>₹3,999</p>
-
-            <button>Add To Cart</button>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <img src="SlantedBlackRingGB.png" alt="">
-
-            <h3>Black Ring</h3>
-
-            <p>₹2,499</p>
-
-            <button>Add To Cart</button>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <img src="BoldDualGB.png" alt="">
-
-            <h3>Bold Dual Tone Geometric Link Chain</h3>
-
-            <p>₹4,299</p>
-
-            <button>Add To Cart</button>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <img src="EternaRingGB.png" alt="">
-
-            <h3>Gold Ring</h3>
-
-            <p>₹3,899</p>
-
-            <button>Add To Cart</button>
+            <button class="add-cart">
+                Add To Cart
+            </button>
 
         </div>
 
     </div>
 
+
+
+   <div class="card" data-category="necklace">
+
+        <img src="VintageN.jpg" alt="" onclick="openProduct(this.src)">
+
+        <h3>Vintage Necklace</h3>
+
+        <p>₹2,999</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+   <div class="card" data-category="gift">
+
+
+        <img src="SilverlineGiftBox.png" alt="" onclick="openProduct(this.src)">
+
+        <h3>Silverline Gift Box</h3>
+
+        <p>₹1,799</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- MEN COLLECTION -->
+
+<div class="recipient-title" id="men-products">
+
+    <h1>Men Collection</h1>
+
+</div>
+
+
+
+<div class="products">
+
+  <div class="card" data-category="gift">
+
+        <img src="MosaicGB.png" alt=""onclick="openProduct(this.src)">
+
+        <h3>Mosaic Gift Box</h3>
+
+        <p>₹3,999</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card" data-category="ring">
+
+        <img src="SlantedBlackRingGB.png" alt="" onclick="openProduct(this.src)">
+
+        <h3>Black Ring</h3>
+
+        <p>₹2,499</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+  <div class="card" data-category="necklace">
+
+        <img src="BoldDualGB.png" alt="" onclick="openProduct(this.src)">
+
+        <h3>Bold Dual Tone Chain</h3>
+
+        <p>₹4,299</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+   <div class="card" data-category="ring">
+
+        <img src="EternaRingGB.png" alt="" onclick="openProduct(this.src)">
+
+        <h3>Gold Ring</h3>
+
+        <p>₹3,899</p>
+
+        <div class="cart-actions">
+
+            <div class="quantity-box">
+
+                <button class="minus">-</button>
+
+                <span class="qty">1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+            <button class="add-cart">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- FAQ SECTION -->
+
+<div class="faq-section">
+
+    <div class="title">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="container mt-5 mb-5">
+
+        <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1">
+
+                        Do you provide free shipping?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq1"
+                    class="accordion-collapse collapse show">
+
+                    <div class="accordion-body">
+
+                        Yes, we provide free shipping
+                        on orders above ₹2999.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+
+                        How many days does delivery take?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq2"
+                    class="accordion-collapse collapse">
+
+                    <div class="accordion-body">
+
+                        Delivery usually takes 4-7 business days.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3">
+
+                        Can I return products?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq3"
+                    class="accordion-collapse collapse">
+
+                    <div class="accordion-body">
+
+                        Yes, products can be returned within 7 days.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCT POPUP -->
+
+    <div id="product-popup" class="popup">
+
+    <span class="close-popup" onclick="closeProduct()">
+        × 
+    </span>
+
+    <img id="popup-image">
+
+    </div>
+
+</div>
 
 
     <!-- FOOTER -->
@@ -387,9 +943,11 @@
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- JS -->
 
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

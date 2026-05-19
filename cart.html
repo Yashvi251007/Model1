@@ -1,98 +1,90 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
-
-
-    <!-- TOPBAR -->
-
     <div class="topbar">
-
         <p>FREE SHIPPING on orders above ₹2999</p>
-
     </div>
 
-
-
-    <!-- NAVBAR -->
-
     <div class="navbar">
-
         <div class="logo">
             PALMONAS
         </div>
-
-
-
         <div class="menu">
-
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact Us</a>
             <a href="login.html">Login</a>
             <a href="cart.html">Cart</a>
-
         </div>
-
     </div>
-
-
-
-    <!-- TITLE -->
 
     <div class="title">
-
-        <h1>Shopping Cart</h1>
-
+        <h1>My Shopping Cart</h1>
+        <p>Your selected jewellery collection</p>
     </div>
 
-
-
-    <!-- CART BOX -->
-
-    <div class="cart-box">
-
-        <h2>Total Amount:</h2>
-
-        <h1 id="total">₹0</h1>
-
-        <button id="clear-cart">Clear Cart</button>
-
+    <div class="cart-summary">
+        <div class="summary-box">
+            <h2>Total Amount</h2>
+            <h1 id="total">₹0</h1>
+            <button class="checkout-btn">
+                Proceed To Checkout
+            </button>
+        </div>
     </div>
-
-
-
-    <!-- CART PRODUCTS -->
 
     <div class="products" id="cart-products"></div>
-
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <h2>PALMONAS</h2>
-
-        <p>Luxury Jewellery Collection</p>
-
+   
+    <div class="clear-cart">
+        <button id="clear-cart">
+            Clear Cart
+        </button>
     </div>
 
+    <div id="paymentModal" class="popup">
+        <div class="login-box" style="text-align: left; width: 450px;">
+            <span class="close-popup" id="closePayment" style="color: black; right: 20px; top: 10px;">&times;</span>
+            <h1 style="font-size: 24px; margin-bottom: 15px; text-align: center;">Payment Method</h1>
+            
+            <p style="font-size: 14px; margin-bottom: 20px; color: #555; text-align: center;">
+                Select how you want to pay for your order.
+            </p>
 
+            <div style="margin-bottom: 15px;">
+                <input type="radio" name="paymentOpt" value="Card" id="payCard" checked>
+                <label for="payCard" style="font-size: 16px; font-weight: bold; margin-left: 10px;">Credit / Debit Card</label>
+            </div>
 
-    <!-- JAVASCRIPT -->
+            <div style="margin-bottom: 15px;">
+                <input type="radio" name="paymentOpt" value="UPI" id="payUPI">
+                <label for="payUPI" style="font-size: 16px; font-weight: bold; margin-left: 10px;">UPI (GPay / PhonePe)</label>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <input type="radio" name="paymentOpt" value="COD" id="payCOD">
+                <label for="payCOD" style="font-size: 16px; font-weight: bold; margin-left: 10px;">Cash On Delivery (COD)</label>
+            </div>
+
+            <div style="display: flex; align-items: center; margin-top: 15px; margin-bottom: 25px; text-align: left;">
+                <input type="checkbox" id="formCheckbox" style="width: auto; margin-top: 0; margin-right: 10px; cursor: pointer;">
+                <label for="formCheckbox" id="checkboxLabel" style="font-size: 14px; color: #555; cursor: pointer;">Remember Me</label>
+            </div>
+
+            <button id="confirmPayBtn">Confirm & Pay</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>PALMONAS</h2>
+        <p>Luxury Jewellery Collection</p>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
