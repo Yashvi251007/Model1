@@ -47,43 +47,126 @@
         </button>
     </div>
 
-    <div id="paymentModal" class="popup">
-        <div class="login-box" style="text-align: left; width: 450px;">
-            <span class="close-popup" id="closePayment" style="color: black; right: 20px; top: 10px;">&times;</span>
-            <h1 style="font-size: 24px; margin-bottom: 15px; text-align: center;">Payment Method</h1>
-            
-            <p style="font-size: 14px; margin-bottom: 20px; color: #555; text-align: center;">
-                Select how you want to pay for your order.
-            </p>
+   <div id="paymentModal" class="popup">
 
-            <div style="margin-bottom: 15px;">
-                <input type="radio" name="paymentOpt" value="Card" id="payCard" checked>
-                <label for="payCard" style="font-size: 16px; font-weight: bold; margin-left: 10px;">Credit / Debit Card</label>
-            </div>
+    <div class="login-box payment-box">
 
-            <div style="margin-bottom: 15px;">
-                <input type="radio" name="paymentOpt" value="UPI" id="payUPI">
-                <label for="payUPI" style="font-size: 16px; font-weight: bold; margin-left: 10px;">UPI (GPay / PhonePe)</label>
-            </div>
+        <span class="close-popup"
+        id="closePayment">
+            &times;
+        </span>
 
-            <div style="margin-bottom: 25px;">
-                <input type="radio" name="paymentOpt" value="COD" id="payCOD">
-                <label for="payCOD" style="font-size: 16px; font-weight: bold; margin-left: 10px;">Cash On Delivery (COD)</label>
-            </div>
+        <h1>Payment Method</h1>
 
-            <div style="display: flex; align-items: center; margin-top: 15px; margin-bottom: 25px; text-align: left;">
-                <input type="checkbox" id="formCheckbox" style="width: auto; margin-top: 0; margin-right: 10px; cursor: pointer;">
-                <label for="formCheckbox" id="checkboxLabel" style="font-size: 14px; color: #555; cursor: pointer;">Remember Me</label>
-            </div>
+        <p class="payment-text">
+            Select how you want to pay
+            for your order.
+        </p>
 
-            <button id="confirmPayBtn">Confirm & Pay</button>
+
+
+        <!-- CARD -->
+
+        <div class="payment-option">
+
+            <input type="radio"
+            name="paymentOpt"
+            value="Card"
+            checked
+            onclick="showPaymentFields()">
+
+            <label>
+                Credit / Debit Card
+            </label>
+
         </div>
+
+
+
+        <!-- UPI -->
+
+        <div class="payment-option">
+
+            <input type="radio"
+            name="paymentOpt"
+            value="UPI"
+            onclick="showPaymentFields()">
+
+            <label>
+                UPI (GPay / PhonePe)
+            </label>
+
+        </div>
+
+
+
+        <!-- COD -->
+
+        <div class="payment-option">
+
+            <input type="radio"
+            name="paymentOpt"
+            value="COD"
+            onclick="showPaymentFields()">
+
+            <label>
+                Cash On Delivery
+            </label>
+
+        </div>
+
+
+
+        <!-- CARD DETAILS -->
+
+        <div id="cardFields">
+
+            <input type="text"
+            placeholder="Card Holder Name">
+
+            <input type="text"
+            placeholder="Card Number">
+
+            <div class="card-row">
+
+                <input type="text"
+                placeholder="MM/YY">
+
+                <input type="text"
+                placeholder="CVV">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- UPI DETAILS -->
+
+        <div id="upiFields"
+        style="display:none;">
+
+            <input type="text"
+            placeholder="Enter UPI ID">
+
+        </div>
+
+
+
+        <button id="confirmPayBtn">
+            Confirm & Pay
+        </button>
+
     </div>
 
+</div>
     <div class="footer">
         <h2>PALMONAS</h2>
         <p>Luxury Jewellery Collection</p>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 
     <script src="script.js"></script>
 </body>

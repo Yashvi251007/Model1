@@ -35,27 +35,59 @@
 </div>
 
 <div class="login-container">
-    <div class="login-box">
-        <h1 id="form-title">Login</h1>
-        
-        <input type="text" placeholder="Enter Username" required>
-        
-        <input type="email" placeholder="Enter Email" id="signup-email" style="display:none;"required>
-        
-        <input type="password" placeholder="Enter Password"required>
-        
-        <button id="main-btn">Login</button>
-        
-        <p class="switch-text">
-            Don't have an account? <span onclick="showSignup()">Sign Up</span>
-        </p>
-    </div>
-</div>
 
+    <div class="login-box">
+
+        <h1 id="form-title">Login</h1>
+
+        <input type="text"
+               id="username"
+               placeholder="Enter Username"
+               required>
+
+        <input type="email"
+               id="signup-email"
+               placeholder="Enter Email"
+               style="display:none;"
+               required>
+
+        <input type="password"
+               id="password"
+               placeholder="Enter Password"
+               required>
+
+        <!-- CHECKBOX -->
+        <div class="remember-box">
+
+            <input type="checkbox" id="formCheckbox">
+
+            <label for="formCheckbox" id="checkboxLabel">
+                Remember Me
+            </label>
+
+        </div>
+
+        <button id="main-btn">
+            Login
+        </button>
+
+        <p class="switch-text">
+            Don't have an account?
+            <span onclick="showSignup()">
+                Sign Up
+            </span>
+        </p>
+
+    </div>
+
+</div>
 <div class="footer">
     <h2>PALMONAS</h2>
     <p>Luxury Jewellery Collection</p>
 </div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script src="script.js"></script>
 

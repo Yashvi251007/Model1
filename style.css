@@ -149,12 +149,10 @@ body{
     border-radius:10px;
     padding:15px;
     text-align:center;
-    /* Added transition timing and box-shadow tracking for super clean interactive fluidity */
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
 }
 
 .card:hover{
-    /* Translates the card up slightly and drops a professional depth shadow behind it */
     transform: translateY(-8px) !important;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
 }
@@ -287,6 +285,26 @@ body{
     margin-top: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
+}
+
+.remember-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+    text-align:left;
+}
+
+.remember-box input{
+    width:auto;
+    margin:0;
+    cursor:pointer;
+}
+
+.remember-box label{
+    font-size:14px;
+    color:#555;
+    cursor:pointer;
 }
 .switch-text{
     margin-top:20px;
@@ -430,4 +448,154 @@ body{
 
 #confirmPayBtn:hover {
     background: #c79a2b;
+}
+
+/* CONTACT PAGE */
+
+.contact-container{
+    width:90%;
+    max-width:1200px;
+    margin:60px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+    background:#fff;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-left{
+    width:45%;
+}
+
+.contact-left h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.contact-left p{
+    font-size:18px;
+    line-height:30px;
+    color:#555;
+}
+
+.contact-info{
+    margin-top:30px;
+}
+
+.contact-info h3{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:normal;
+}
+
+.contact-right{
+    width:55%;
+}
+
+.contact-right input,
+.contact-right textarea{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.contact-right textarea{
+    height:150px;
+    resize:none;
+}
+
+.contact-right button{
+    width:100%;
+    padding:15px;
+    margin-top:20px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-right button:hover{
+    background:#c79a2b;
+}
+
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+    .contact-container{
+        flex-direction:column;
+        padding:30px;
+    }
+
+    .contact-left,
+    .contact-right{
+        width:100%;
+    }
+
+    .contact-left h1{
+        font-size:35px;
+    }
+
+}
+/* PAYMENT BOX */
+
+.payment-box{
+    width:450px;
+    position:relative;
+}
+
+.payment-text{
+    color:#666;
+    margin-top:10px;
+    margin-bottom:25px;
+}
+
+.payment-option{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:18px;
+    font-size:18px;
+}
+
+.payment-option input{
+    width:auto;
+}
+
+.payment-box input[type="text"]{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.card-row{
+    display:flex;
+    gap:10px;
+}
+
+.card-row input{
+    width:50%;
+}
+
+#closePayment{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:35px;
+    color:black;
+    cursor:pointer;
 }
